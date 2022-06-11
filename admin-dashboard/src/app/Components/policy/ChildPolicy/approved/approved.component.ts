@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AllApplyData } from '../AllApplyData.';
 
 @Component({
   selector: 'app-approved',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApprovedComponent implements OnInit {
 
-  constructor() { }
+  allApprovedData: AllApplyData[]
+  constructor(
+    private httpClient : HttpClient
+  ) { }
 
   ngOnInit(): void {
-  }
+    this.httpClient.get<any>('http://localhost:8085/getcustomersByApproved').subscribe(
+      response=> {
+        this.allApprovedData=response;
+        console.log(this.allApprovedData);
+        
+      })
+    }
 
 }

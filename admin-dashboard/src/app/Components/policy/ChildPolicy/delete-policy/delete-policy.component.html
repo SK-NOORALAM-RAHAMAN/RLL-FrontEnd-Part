@@ -12,15 +12,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Motor Insurance</td>
-                    <td>Car Insurance</td>
-                    <td>12/11/22</td>
+
+                <tr *ngFor="let p of allPolicyData">
+                    <th scope="row">{{p.pid}}</th>
+                    <td>{{p.policyname}}</td>
+                    <td>{{p.policycatagory}}</td>
+                    <td>{{p.addDateOfPolicy}}</td>
                     <td><button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></td>
 
                 </tr>
-                <tr>
+                <!-- <tr>
                     <th scope="row">2</th>
                     <td>SBI life Insurance</td>
                     <td>Life Insurance</td>
@@ -33,7 +34,7 @@
                     <td>Health Insurance</td>
                     <td> 12/11/22</td>
                     <td><button class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>

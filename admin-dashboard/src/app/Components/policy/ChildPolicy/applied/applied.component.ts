@@ -1,20 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AllApplyData } from '../AllApplyData.';
 
-export class AllApplyData{
-  constructor(
-    public appid: number,
-    public customername: string,
-    public policyCatagory: string,
-    public policyName : string,
-    public policyPrice : string,
-    public status: string,
-    public policyapplydate: string,
 
-  ){
-
-  }
-}
 @Component({
   selector: 'app-applied',
   templateUrl: './applied.component.html',
